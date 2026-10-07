@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="Cursor">
+  <diagram id="core-business-flow" name="核心业务流程">
+    <mxGraphModel dx="1400" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1320" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="核心业务流程" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontFamily=微软雅黑;fontColor=#212121;" vertex="1" parent="1" connectable="0">
+          <mxGeometry x="40" y="12" width="1220" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="bgA" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#E0E0E0;" vertex="1" parent="1" connectable="0">
+          <mxGeometry x="40" y="108" width="460" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="bgU" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F4FBF6;strokeColor=#E0E0E0;" vertex="1" parent="1" connectable="0">
+          <mxGeometry x="680" y="108" width="580" height="840" as="geometry" />
+        </mxCell>
+        <mxCell id="hdA" value="管理员" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1565C0;strokeColor=#1565C0;fontColor=#FFFFFF;fontSize=15;fontStyle=1;fontFamily=微软雅黑;" vertex="1" parent="1" connectable="0">
+          <mxGeometry x="40" y="64" width="460" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="hdU" value="用户" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2E7D32;strokeColor=#2E7D32;fontColor=#FFFFFF;fontSize=15;fontStyle=1;fontFamily=微软雅黑;" vertex="1" parent="1" connectable="0">
+          <mxGeometry x="680" y="64" width="580" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="nLogin" value="登录" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#E3F2FD;strokeColor=#1565C0;fontColor=#0D47A1;fontSize=14;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="150" y="160" width="240" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="nBank" value="创建题库" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#E3F2FD;strokeColor=#1565C0;fontColor=#0D47A1;fontSize=14;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="150" y="268" width="240" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="nQuestion" value="创建题目&lt;br&gt;编写题解并挂到题库" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#E3F2FD;strokeColor=#1565C0;fontColor=#0D47A1;fontSize=14;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="150" y="376" width="240" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="nPublish" value="发布" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#E3F2FD;strokeColor=#1565C0;fontColor=#0D47A1;fontSize=14;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="150" y="504" width="240" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="nStore" value="已发布题目" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=14;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#5D4037;fontSize=14;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="520" y="494" width="140" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="nReg" value="注册登录" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#1B5E20;fontSize=14;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="855" y="160" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="nFind" value="发现题目" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#1B5E20;fontSize=14;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="855" y="280" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="nSearch" value="分词检索" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#1B5E20;fontSize=14;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="720" y="400" width="180" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="nBrowse" value="浏览题库" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#1B5E20;fontSize=14;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="980" y="400" width="180" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="nDo" value="做题并提交" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#1B5E20;fontSize=14;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="855" y="520" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="nSol" value="查看题解" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#1B5E20;fontSize=14;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="855" y="628" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="nMark" value="标记掌握情况" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#1B5E20;fontSize=14;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="855" y="736" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="nCal" value="刷题日历" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#1B5E20;fontSize=14;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="855" y="856" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="lblLoop" value="继续刷题" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=12;fontFamily=微软雅黑;fontColor=#2E7D32;" vertex="1" parent="1" connectable="0">
+          <mxGeometry x="1108" y="530" width="88" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="eLoginBank" style="rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nLogin" target="nBank">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eBankQuestion" style="rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nBank" target="nQuestion">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eQuestionPublish" style="rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nQuestion" target="nPublish">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ePublishStore" style="rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=1.5;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="nPublish" target="nStore">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eStoreFind" style="rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=1.5;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="nStore" target="nFind">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="590" y="304" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eRegFind" style="rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nReg" target="nFind">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eFindSearch" style="rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=1.5;exitX=0.3;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nFind" target="nSearch">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="924" y="364" />
+              <mxPoint x="810" y="364" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eFindBrowse" style="rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=1.5;exitX=0.7;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nFind" target="nBrowse">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1016" y="364" />
+              <mxPoint x="1070" y="364" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eSearchDo" style="rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.3;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nSearch" target="nDo">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="810" y="484" />
+              <mxPoint x="924" y="484" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eBrowseDo" style="rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.7;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nBrowse" target="nDo">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1070" y="484" />
+              <mxPoint x="1016" y="484" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eDoSol" style="rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nDo" target="nSol">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eSolMark" style="rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nSol" target="nMark">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eMarkFind" style="rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#2E7D32;strokeWidth=1.5;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="nMark" target="nFind">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1210" y="760" />
+              <mxPoint x="1210" y="304" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eMarkCal" style="rounded=0;html=1;endArrow=block;endFill=1;dashed=1;strokeColor=#2E7D32;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nMark" target="nCal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

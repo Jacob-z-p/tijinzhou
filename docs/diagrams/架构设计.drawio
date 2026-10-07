@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="Cursor">
+  <diagram id="architecture" name="架构设计">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1240" pageHeight="860" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="架构设计" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontFamily=微软雅黑;fontColor=#212121;" vertex="1" parent="1" connectable="0">
+          <mxGeometry x="36" y="8" width="1168" height="32" as="geometry" />
+        </mxCell>
+
+        <mxCell id="bgUser" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F4FBF6;strokeColor=#E0E0E0;" vertex="1" parent="1" connectable="0">
+          <mxGeometry x="144" y="52" width="1060" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="bgAccess" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F7F8F9;strokeColor=#E0E0E0;" vertex="1" parent="1" connectable="0">
+          <mxGeometry x="144" y="144" width="1060" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="bgApp" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#E0E0E0;" vertex="1" parent="1" connectable="0">
+          <mxGeometry x="144" y="252" width="1060" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="bgStore" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF8F1;strokeColor=#E0E0E0;" vertex="1" parent="1" connectable="0">
+          <mxGeometry x="144" y="616" width="1060" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="bgInfra" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#E0E0E0;" vertex="1" parent="1" connectable="0">
+          <mxGeometry x="144" y="736" width="1060" height="72" as="geometry" />
+        </mxCell>
+
+        <mxCell id="lbUser" value="用户层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2E7D32;strokeColor=#2E7D32;fontColor=#FFFFFF;fontSize=14;fontStyle=1;fontFamily=微软雅黑;" vertex="1" parent="1" connectable="0">
+          <mxGeometry x="36" y="52" width="108" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="lbAccess" value="接入层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#455A64;strokeColor=#455A64;fontColor=#FFFFFF;fontSize=14;fontStyle=1;fontFamily=微软雅黑;" vertex="1" parent="1" connectable="0">
+          <mxGeometry x="36" y="144" width="108" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="lbApp" value="应用层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1565C0;strokeColor=#1565C0;fontColor=#FFFFFF;fontSize=14;fontStyle=1;fontFamily=微软雅黑;" vertex="1" parent="1" connectable="0">
+          <mxGeometry x="36" y="252" width="108" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="lbStore" value="存储层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EF6C00;strokeColor=#EF6C00;fontColor=#FFFFFF;fontSize=14;fontStyle=1;fontFamily=微软雅黑;" vertex="1" parent="1" connectable="0">
+          <mxGeometry x="36" y="616" width="108" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="lbInfra" value="基础设施" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#546E7A;strokeColor=#546E7A;fontColor=#FFFFFF;fontSize=14;fontStyle=1;fontFamily=微软雅黑;" vertex="1" parent="1" connectable="0">
+          <mxGeometry x="36" y="736" width="108" height="72" as="geometry" />
+        </mxCell>
+
+        <mxCell id="nSite" value="响应式网站" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#1B5E20;fontSize=14;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="544" y="66" width="220" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="nNginx" value="Nginx&lt;br&gt;负载均衡、IP 黑白名单" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#ECEFF1;strokeColor=#546E7A;fontColor=#263238;fontSize=14;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="464" y="158" width="380" height="64" as="geometry" />
+        </mxCell>
+
+        <mxCell id="nNext" value="Next.js&lt;br&gt;页面服务端渲染" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#E3F2FD;strokeColor=#1565C0;fontColor=#0D47A1;fontSize=14;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="188" y="276" width="220" height="132" as="geometry" />
+        </mxCell>
+        <mxCell id="nNacos" value="Nacos&lt;br&gt;配置中心" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#5D4037;fontSize=14;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="188" y="428" width="220" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="nBoot" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1565C0;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="520" y="276" width="656" height="268" as="geometry" />
+        </mxCell>
+        <mxCell id="nBootHd" value="Spring Boot" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1565C0;strokeColor=#1565C0;fontColor=#FFFFFF;fontSize=15;fontStyle=1;fontFamily=微软雅黑;" vertex="1" parent="1" connectable="0">
+          <mxGeometry x="520" y="276" width="656" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="mUser" value="用户模块&lt;br&gt;注册登录与角色" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#E3F2FD;strokeColor=#1565C0;fontColor=#0D47A1;fontSize=13;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="544" y="332" width="192" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="mBank" value="题库模块&lt;br&gt;维护题库" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#E3F2FD;strokeColor=#1565C0;fontColor=#0D47A1;fontSize=13;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="752" y="332" width="192" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="mQuestion" value="题目模块&lt;br&gt;题解与发布" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#E3F2FD;strokeColor=#1565C0;fontColor=#0D47A1;fontSize=13;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="960" y="332" width="192" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="mSearch" value="检索模块&lt;br&gt;分词检索" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#E3F2FD;strokeColor=#1565C0;fontColor=#0D47A1;fontSize=13;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="648" y="404" width="192" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="mRecord" value="刷题记录&lt;br&gt;提交与日历" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#E3F2FD;strokeColor=#1565C0;fontColor=#0D47A1;fontSize=13;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="856" y="404" width="192" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="nCap" value="Sa-Token 鉴权 · Sentinel 限流熔断" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#F5F7FA;strokeColor=#CFD8DC;fontColor=#455A64;fontSize=13;fontFamily=微软雅黑;" vertex="1" parent="1" connectable="0">
+          <mxGeometry x="544" y="476" width="608" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="nMysql" value="MySQL&lt;br&gt;用户、题库、题目、刷题记录" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#EF6C00;fontColor=#E65100;fontSize=13;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="188" y="634" width="300" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="nRedis" value="Redis&lt;br&gt;会话、热门题缓存、刷题计数" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#EF6C00;fontColor=#E65100;fontSize=13;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="520" y="634" width="300" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="nEs" value="Elasticsearch&lt;br&gt;题目分词检索" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#EF6C00;fontColor=#E65100;fontSize=13;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="852" y="634" width="300" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="nInfra" value="Docker、Linux 服务器" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#546E7A;fontColor=#37474F;fontSize=14;fontFamily=微软雅黑;" vertex="1" parent="1">
+          <mxGeometry x="188" y="748" width="964" height="48" as="geometry" />
+        </mxCell>
+
+        <mxCell id="lbFetch" value="服务端取数" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;fontFamily=微软雅黑;fontColor=#546E7A;" vertex="1" parent="1" connectable="0">
+          <mxGeometry x="412" y="314" width="104" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="lbConfig" value="配置" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;fontFamily=微软雅黑;fontColor=#F9A825;" vertex="1" parent="1" connectable="0">
+          <mxGeometry x="430" y="448" width="72" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="lbIp" value="IP 名单" style="text;html=1;strokeColor=none;fillColor=#F7F8F9;align=center;verticalAlign=middle;fontSize=12;fontFamily=微软雅黑;fontColor=#F9A825;" vertex="1" parent="1" connectable="0">
+          <mxGeometry x="176" y="204" width="64" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="eSiteNginx" style="rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nSite" target="nNginx">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eNginxNext" style="rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nNginx" target="nNext">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="654" y="264" />
+              <mxPoint x="298" y="264" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eNginxBoot" style="rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nNginx" target="nBoot">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="654" y="264" />
+              <mxPoint x="848" y="264" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eNextBoot" style="rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=1.5;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="nNext" target="nBoot">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eNacosBoot" style="rounded=0;html=1;endArrow=block;endFill=1;dashed=1;strokeColor=#F9A825;strokeWidth=1.5;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="nNacos" target="nBoot">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eNacosNginx" style="rounded=0;html=1;endArrow=block;endFill=1;dashed=1;strokeColor=#F9A825;strokeWidth=1.5;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="nNacos" target="nNginx">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="164" y="478" />
+              <mxPoint x="164" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eBootMysql" style="rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nBoot" target="nMysql">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="848" y="604" />
+              <mxPoint x="338" y="604" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eBootRedis" style="rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nBoot" target="nRedis">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="848" y="604" />
+              <mxPoint x="670" y="604" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eBootEs" style="rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nBoot" target="nEs">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="848" y="604" />
+              <mxPoint x="1002" y="604" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
