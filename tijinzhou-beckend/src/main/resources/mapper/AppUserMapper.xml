@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jacobzp.tijinzhou.mapper.AppUserMapper">
+
+    <resultMap id="BaseResultMap" type="com.jacobzp.tijinzhou.model.entity.AppUser">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="user_account" column="user_account" jdbcType="VARCHAR"/>
+        <result property="user_password" column="user_password" jdbcType="VARCHAR"/>
+        <result property="user_name" column="user_name" jdbcType="VARCHAR"/>
+        <result property="user_avatar" column="user_avatar" jdbcType="VARCHAR"/>
+        <result property="user_profile" column="user_profile" jdbcType="VARCHAR"/>
+        <result property="user_role" column="user_role" jdbcType="VARCHAR"/>
+        <result property="user_status" column="user_status" jdbcType="TINYINT"/>
+        <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="is_delete" column="is_delete" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,user_account,user_password,user_name,user_avatar,user_profile,
+        user_role,user_status,create_time,update_time,is_delete
+    </sql>
+</mapper>
