@@ -12,6 +12,11 @@ public interface UserConstant {
      */
     String USER_LOGIN_STATE = "user_login";
 
+    /**
+     * 业务用户登录态键
+     */
+    String APP_USER_LOGIN_STATE = "app_user_login";
+
     //  region 权限
 
     /**

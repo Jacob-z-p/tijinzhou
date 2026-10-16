@@ -1,6 +1,7 @@
 package com.jacobzp.tijinzhou.model.vo;
 
 import cn.hutool.json.JSONUtil;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.jacobzp.tijinzhou.model.entity.Question;
 import java.io.Serializable;
 import java.util.Date;
@@ -37,8 +38,9 @@ public class QuestionVO implements Serializable {
     private List<String> tagList;
 
     /**
-     * 推荐答案
+     * 推荐答案。公开接口不返回，空值不出现在 JSON 里
      */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String answer;
 
     /**
@@ -65,6 +67,12 @@ public class QuestionVO implements Serializable {
      * 创建人信息
      */
     private AppUserVO user;
+
+    /**
+     * 所属题库列表。嵌在题库详情里的题目不填，避免循环
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private List<QuestionBankVO> questionBankList;
 
     /**
      * 对象转包装类

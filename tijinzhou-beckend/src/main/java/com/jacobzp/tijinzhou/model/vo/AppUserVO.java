@@ -19,11 +19,6 @@ public class AppUserVO implements Serializable {
     private Long id;
 
     /**
-     * 账号
-     */
-    private String userAccount;
-
-    /**
      * 用户昵称
      */
     private String userName;
@@ -44,11 +39,6 @@ public class AppUserVO implements Serializable {
     private String userRole;
 
     /**
-     * 状态：0正常 1封禁
-     */
-    private Integer userStatus;
-
-    /**
      * 创建时间
      */
     private Date createTime;
@@ -65,12 +55,10 @@ public class AppUserVO implements Serializable {
         }
         AppUserVO appUserVO = new AppUserVO();
         appUserVO.setId(appUser.getId());
-        appUserVO.setUserAccount(appUser.getUser_account());
         appUserVO.setUserName(appUser.getUser_name());
         appUserVO.setUserAvatar(appUser.getUser_avatar());
         appUserVO.setUserProfile(appUser.getUser_profile());
         appUserVO.setUserRole(appUser.getUser_role());
-        appUserVO.setUserStatus(appUser.getUser_status());
         appUserVO.setCreateTime(appUser.getCreate_time());
         return appUserVO;
     }
@@ -87,12 +75,10 @@ public class AppUserVO implements Serializable {
         }
         AppUser appUser = new AppUser();
         appUser.setId(appUserVO.getId());
-        appUser.setUser_account(appUserVO.getUserAccount());
         appUser.setUser_name(appUserVO.getUserName());
         appUser.setUser_avatar(appUserVO.getUserAvatar());
         appUser.setUser_profile(appUserVO.getUserProfile());
         appUser.setUser_role(appUserVO.getUserRole());
-        appUser.setUser_status(appUserVO.getUserStatus());
         appUser.setCreate_time(appUserVO.getCreateTime());
         return appUser;
     }

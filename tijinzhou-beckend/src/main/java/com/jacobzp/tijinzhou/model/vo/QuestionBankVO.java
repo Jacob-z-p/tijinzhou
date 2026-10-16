@@ -1,5 +1,7 @@
 package com.jacobzp.tijinzhou.model.vo;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.jacobzp.tijinzhou.model.entity.QuestionBank;
 import java.io.Serializable;
 import java.util.Date;
@@ -52,6 +54,12 @@ public class QuestionBankVO implements Serializable {
      * 创建人信息
      */
     private AppUserVO user;
+
+    /**
+     * 题库下的题目分页。只在题库详情且需要查询题目时填充
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private Page<QuestionVO> questionPage;
 
     /**
      * 对象转包装类

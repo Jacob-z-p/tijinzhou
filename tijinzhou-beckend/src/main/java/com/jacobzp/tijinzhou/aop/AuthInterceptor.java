@@ -3,9 +3,9 @@ package com.jacobzp.tijinzhou.aop;
 import com.jacobzp.tijinzhou.annotation.AuthCheck;
 import com.jacobzp.tijinzhou.common.ErrorCode;
 import com.jacobzp.tijinzhou.exception.BusinessException;
-import com.jacobzp.tijinzhou.model.entity.User;
+import com.jacobzp.tijinzhou.model.entity.AppUser;
 import com.jacobzp.tijinzhou.model.enums.UserRoleEnum;
-import com.jacobzp.tijinzhou.service.UserService;
+import com.jacobzp.tijinzhou.service.AppUserService;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -26,8 +26,13 @@ import jakarta.servlet.http.HttpServletRequest;
 @Component
 public class AuthInterceptor {
 
+    /**
+     * 封禁
+     */
+    private static final int USER_STATUS_BAN = 1;
+
     @Resource
-    private UserService userService;
+    private AppUserService appUserService;
 
     /**
      * 执行拦截
@@ -41,31 +46,21 @@ public class AuthInterceptor {
         String mustRole = authCheck.mustRole();
         RequestAttributes requestAttributes = RequestContextHolder.currentRequestAttributes();
         HttpServletRequest request = ((ServletRequestAttributes) requestAttributes).getRequest();
-        // 当前登录用户
-        User loginUser = userService.getLoginUser(request);
+        AppUser loginUser = appUserService.getLoginUser(request);
+        if (Integer.valueOf(USER_STATUS_BAN).equals(loginUser.getUser_status())) {
+            throw new BusinessException(ErrorCode.NO_AUTH_ERROR, "用户已封禁");
+        }
         UserRoleEnum mustRoleEnum = UserRoleEnum.getEnumByValue(mustRole);
-        // 不需要权限，放行
         if (mustRoleEnum == null) {
             return joinPoint.proceed();
         }
-        // 必须有该权限才通过
-        UserRoleEnum userRoleEnum = UserRoleEnum.getEnumByValue(loginUser.getUserRole());
+        UserRoleEnum userRoleEnum = UserRoleEnum.getEnumByValue(loginUser.getUser_role());
         if (userRoleEnum == null) {
             throw new BusinessException(ErrorCode.NO_AUTH_ERROR);
         }
-        // 如果被封号，直接拒绝
-        if (UserRoleEnum.BAN.equals(userRoleEnum)) {
+        if (UserRoleEnum.ADMIN.equals(mustRoleEnum) && !UserRoleEnum.ADMIN.equals(userRoleEnum)) {
             throw new BusinessException(ErrorCode.NO_AUTH_ERROR);
         }
-        // 必须有管理员权限
-        if (UserRoleEnum.ADMIN.equals(mustRoleEnum)) {
-            // 用户没有管理员权限，拒绝
-            if (!UserRoleEnum.ADMIN.equals(userRoleEnum)) {
-                throw new BusinessException(ErrorCode.NO_AUTH_ERROR);
-            }
-        }
-        // 通过权限校验，放行
         return joinPoint.proceed();
     }
 }
-
