@@ -1,16 +1,20 @@
 "use client";
 
+import { addPracticeRecord } from "@/api/practiceRecord";
 import { getQuestion } from "@/api/question";
 import MarkdownView from "@/components/MarkdownView";
+import type { RootState } from "@/stores";
 import type { Question } from "@/types/api";
 import { App, Card, Space, Tag, Typography } from "antd";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 export default function QuestionDetailPage() {
   const { message } = App.useApp();
   const params = useParams<{ id: string }>();
+  const loginUser = useSelector((state: RootState) => state.user.loginUser);
   const [question, setQuestion] = useState<Question>();
 
   useEffect(() => {
@@ -23,6 +27,15 @@ export default function QuestionDetailPage() {
         message.error(error instanceof Error ? error.message : "加载题目失败");
       });
   }, [params.id, message]);
+
+  useEffect(() => {
+    if (!question?.id || !loginUser) {
+      return;
+    }
+    addPracticeRecord(question.id).catch((error: unknown) => {
+      console.error(error);
+    });
+  }, [question?.id, loginUser]);
 
   return (
     <Card title={question?.title || "题目"} loading={!question}>

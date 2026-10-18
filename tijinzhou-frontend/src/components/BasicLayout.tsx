@@ -68,6 +68,11 @@ export default function BasicLayout({ children }: { children: React.ReactNode })
               {item.label}
             </Link>
           ))}
+          {loginUser && (
+            <Link href="/user/sign" style={navStyle(pathname.startsWith("/user/sign"))}>
+              签到
+            </Link>
+          )}
           {isAdmin &&
             adminLinks.map((item) => (
               <Link key={item.href} href={item.href} style={navStyle(pathname.startsWith(item.href))}>

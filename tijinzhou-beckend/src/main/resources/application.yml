@@ -13,15 +13,14 @@ spring:
     url: jdbc:mysql://localhost:3306/tijinzhou
     username: root
     password: 123456
-  # Redis 配置。开启后还要去掉 MainApplication 里对 DataRedisAutoConfiguration 的排除
-  # todo 需替换配置，然后取消注释
-#  data:
-#    redis:
-#      database: 1
-#      host: localhost
-#      port: 6379
-#      timeout: 5000ms
-#      password: 123456
+  # Redis：Docker 容器 tijinzhou-redis，只做签到 Bitmap。登录态仍在容器 Session
+  data:
+    redis:
+      database: 1
+      host: localhost
+      port: 6379
+      timeout: 5000ms
+      password: 123456
   # Elasticsearch 配置
   # todo 需替换配置，然后取消注释
 #  elasticsearch:

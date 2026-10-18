@@ -119,6 +119,7 @@ public class AppUserServiceImpl extends ServiceImpl<AppUserMapper, AppUser>
 
     @Override
     public AppUser getLoginUser(HttpServletRequest request) {
+        // 各种判断
         Object userObj = request.getSession().getAttribute(UserConstant.APP_USER_LOGIN_STATE);
         if (!(userObj instanceof AppUser)) {
             throw new BusinessException(ErrorCode.NOT_LOGIN_ERROR);
@@ -127,13 +128,16 @@ public class AppUserServiceImpl extends ServiceImpl<AppUserMapper, AppUser>
         if (currentUser.getId() == null) {
             throw new BusinessException(ErrorCode.NOT_LOGIN_ERROR);
         }
-        currentUser = this.getById(currentUser.getId());
+
+        currentUser = this.getById(currentUser.getId()); // 根据id查询mysql用户信息 [app_user]
+
         if (currentUser == null) {
             throw new BusinessException(ErrorCode.NOT_LOGIN_ERROR);
         }
         if (Integer.valueOf(USER_STATUS_BAN).equals(currentUser.getUser_status())) {
             throw new BusinessException(ErrorCode.NO_AUTH_ERROR, "用户已封禁");
         }
+        // 返回用户信息
         return currentUser;
     }
 

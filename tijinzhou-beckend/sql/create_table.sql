@@ -84,3 +84,19 @@ create table if not exists question_bank_question
   default charset = utf8mb4
   collate = utf8mb4_0900_ai_ci
     comment = '题库题目';
+
+-- 用户刷题记录表
+create table if not exists user_practice_record
+(
+    id            bigint   not null auto_increment comment 'id',
+    user_id       bigint   not null comment '用户 id',
+    question_id   bigint   not null comment '题目 id',
+    practice_date date     not null comment '刷题日期，按 Asia/Shanghai 自然日',
+    create_time   datetime not null default current_timestamp comment '创建时间',
+    primary key (id),
+    unique key uk_user_question_date (user_id, question_id, practice_date),
+    index idx_user_date (user_id, practice_date)
+) engine = InnoDB
+  default charset = utf8mb4
+  collate = utf8mb4_0900_ai_ci
+    comment = '用户刷题记录';

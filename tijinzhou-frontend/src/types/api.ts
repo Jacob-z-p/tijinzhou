@@ -53,6 +53,41 @@ export type QuestionBankQuestion = {
   questionId?: string;
 };
 
+export type SignResult = {
+  signed: boolean;
+  alreadySigned: boolean;
+  signDate: string;
+  monthSignCount: number;
+  streak: number;
+};
+
+export type SignCalendarDay = {
+  date: string;
+  signed: boolean;
+  practiceCount: number;
+};
+
+export type SignCalendar = {
+  year: number;
+  month: number;
+  today: string;
+  signedToday: boolean;
+  monthSignCount: number;
+  streak: number;
+  days: SignCalendarDay[];
+};
+
+export type SignDayItem = {
+  id: string;
+  title: string;
+};
+
+export type SignDay = {
+  date: string;
+  signed: boolean;
+  questions: SignDayItem[];
+};
+
 export function pageTotal(page?: { total?: number | string }) {
   return Number(page?.total ?? 0);
 }
