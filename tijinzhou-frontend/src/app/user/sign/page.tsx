@@ -1,6 +1,7 @@
 "use client";
 
 import { getSignCalendar, getSignDay, signIn } from "@/api/sign";
+import SignYearHeatmap from "@/components/SignYearHeatmap";
 import type { SignCalendar, SignDay } from "@/types/api";
 import { App, Button, Calendar, Card, Drawer, Space, Typography } from "antd";
 import type { CalendarProps } from "antd";
@@ -18,6 +19,9 @@ export default function SignPage() {
   const [open, setOpen] = useState(false);
   const [dayDetail, setDayDetail] = useState<SignDay>();
   const [dayLoading, setDayLoading] = useState(false);
+  const [pickedYear, setPickedYear] = useState<number>();
+  const [heatReload, setHeatReload] = useState(0);
+  const heatYear = pickedYear ?? (calendarData?.today ? Number(calendarData.today.slice(0, 4)) : dayjs().year());
 
   const loadCalendar = useCallback(
     (year: number, month: number) => {
@@ -48,6 +52,7 @@ export default function SignPage() {
       await signIn();
       message.success("签到成功");
       loadCalendar(panel.year(), panel.month() + 1);
+      setHeatReload((value) => value + 1);
     } catch (error) {
       message.error(error instanceof Error ? error.message : "签到失败");
     } finally {
@@ -62,20 +67,24 @@ export default function SignPage() {
     setPanel(date);
   };
 
-  const onSelect: CalendarProps<Dayjs>["onSelect"] = (date, info) => {
-    if (info.source !== "date") {
-      return;
-    }
-    const picked = date.format("YYYY-MM-DD");
+  function openDay(date: string) {
+    setPanel(dayjs(date));
     setOpen(true);
     setDayDetail(undefined);
     setDayLoading(true);
-    getSignDay(picked)
+    getSignDay(date)
       .then((res) => setDayDetail(res.data))
       .catch((error: unknown) => {
         message.error(error instanceof Error ? error.message : "加载当天记录失败");
       })
       .finally(() => setDayLoading(false));
+  }
+
+  const onSelect: CalendarProps<Dayjs>["onSelect"] = (date, info) => {
+    if (info.source !== "date") {
+      return;
+    }
+    openDay(date.format("YYYY-MM-DD"));
   };
 
   const cellRender: CalendarProps<Dayjs>["cellRender"] = (date, info) => {
@@ -103,6 +112,12 @@ export default function SignPage() {
         <Typography.Text>连续 {calendarData?.streak ?? 0} 天</Typography.Text>
         <Typography.Text>本月签到 {calendarData?.monthSignCount ?? 0} 天</Typography.Text>
       </Space>
+      <SignYearHeatmap
+        year={heatYear}
+        reloadKey={heatReload}
+        onYearChange={setPickedYear}
+        onPickDay={openDay}
+      />
       <Calendar value={panel} onPanelChange={onPanelChange} onSelect={onSelect} cellRender={cellRender} />
       <Drawer title={dayDetail?.date || "当天记录"} open={open} onClose={() => setOpen(false)} loading={dayLoading}>
         <Typography.Paragraph>{dayDetail?.signed ? "已签到" : "未签到"}</Typography.Paragraph>

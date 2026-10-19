@@ -8,6 +8,7 @@ import com.jacobzp.tijinzhou.model.entity.AppUser;
 import com.jacobzp.tijinzhou.model.vo.SignCalendarVO;
 import com.jacobzp.tijinzhou.model.vo.SignDayVO;
 import com.jacobzp.tijinzhou.model.vo.SignResultVO;
+import com.jacobzp.tijinzhou.model.vo.SignYearVO;
 import com.jacobzp.tijinzhou.service.AppUserService;
 import com.jacobzp.tijinzhou.service.SignService;
 import jakarta.annotation.Resource;
@@ -61,6 +62,15 @@ public class SignController {
         } catch (DateTimeException exception) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
+    }
+
+    @GetMapping("/year")
+    public BaseResponse<SignYearVO> year(@RequestParam(required = false) Integer year, HttpServletRequest request) {
+        if (year == null || year < 1 || year > 9999) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        AppUser loginUser = appUserService.getLoginUser(request);
+        return ResultUtils.success(signService.year(loginUser.getId(), year));
     }
 
     @GetMapping("/day")

@@ -4,7 +4,7 @@
 
 页面由 Next.js 渲染，接口由 Spring Boot 提供。登录态走 Session Cookie。当前完成的是基础刷题：注册登录、题库、题目，以及管理员对用户、题库、题目的增删改查。
 
-作者：[jacobzp](https://github.com/jacob-z-p)
+作者：**[jacobzp](https://github.com/jacob-z-p)**
 
 ## 目录
 

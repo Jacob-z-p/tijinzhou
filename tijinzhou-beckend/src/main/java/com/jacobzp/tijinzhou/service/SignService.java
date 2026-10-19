@@ -3,6 +3,7 @@ package com.jacobzp.tijinzhou.service;
 import com.jacobzp.tijinzhou.model.vo.SignCalendarVO;
 import com.jacobzp.tijinzhou.model.vo.SignDayVO;
 import com.jacobzp.tijinzhou.model.vo.SignResultVO;
+import com.jacobzp.tijinzhou.model.vo.SignYearVO;
 import java.time.LocalDate;
 
 /**
@@ -27,6 +28,15 @@ public interface SignService {
      * @return
      */
     SignCalendarVO calendar(Long userId, int year, int month);
+
+    /**
+     * 某年每一天是否签到。只读 Bitmap。
+     *
+     * @param userId
+     * @param year
+     * @return
+     */
+    SignYearVO year(Long userId, int year);
 
     /**
      * 某一天的签到和刷题题目

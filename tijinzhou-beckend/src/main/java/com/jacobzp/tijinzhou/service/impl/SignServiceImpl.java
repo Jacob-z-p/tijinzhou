@@ -4,6 +4,8 @@ import com.jacobzp.tijinzhou.model.vo.SignCalendarDayVO;
 import com.jacobzp.tijinzhou.model.vo.SignCalendarVO;
 import com.jacobzp.tijinzhou.model.vo.SignDayVO;
 import com.jacobzp.tijinzhou.model.vo.SignResultVO;
+import com.jacobzp.tijinzhou.model.vo.SignYearDayVO;
+import com.jacobzp.tijinzhou.model.vo.SignYearVO;
 import com.jacobzp.tijinzhou.service.PracticeRecordService;
 import com.jacobzp.tijinzhou.service.SignService;
 import jakarta.annotation.Resource;
@@ -83,6 +85,28 @@ public class SignServiceImpl implements SignService {
         calendar.setStreak(streak(userId, today));
         calendar.setDays(days);
         return calendar;
+    }
+
+    @Override
+    public SignYearVO year(Long userId, int year) {
+        LocalDate today = LocalDate.now(ZONE);
+        List<SignYearDayVO> days = new ArrayList<>();
+        for (int month = 1; month <= 12; month++) {
+            YearMonth viewed = YearMonth.of(year, month);
+            int length = viewed.lengthOfMonth();
+            long bits = monthBits(userId, viewed);
+            for (int day = 1; day <= length; day++) {
+                SignYearDayVO item = new SignYearDayVO();
+                item.setDate(viewed.atDay(day).toString());
+                item.setSigned(signedOn(bits, length, day));
+                days.add(item);
+            }
+        }
+        SignYearVO result = new SignYearVO();
+        result.setYear(year);
+        result.setToday(today.toString());
+        result.setDays(days);
+        return result;
     }
 
     @Override

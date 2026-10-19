@@ -77,6 +77,17 @@ export type SignCalendar = {
   days: SignCalendarDay[];
 };
 
+export type SignYearDay = {
+  date: string;
+  signed: boolean;
+};
+
+export type SignYear = {
+  year: number;
+  today: string;
+  days: SignYearDay[];
+};
+
 export type SignDayItem = {
   id: string;
   title: string;
